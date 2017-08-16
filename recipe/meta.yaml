@@ -1,6 +1,6 @@
 {% set name = "aipy" %}
-{% set version = "2.1.4" %}
-{% set sha256 = "f86b4bea0938a500f491bbcd71cc35f4baf5e01aabbd08b0b3355a879a70e385" %}
+{% set version = "2.1.5" %}
+{% set sha256 = "a597d726f61e6cd3b64ac951d37af473a8e1d6648fdafbc3a81dfe8c82257679" %}
 
 package:
   name: {{ name }}
@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  script: python setup.py install
+  script: python setup.py install --single-version-externally-managed --record=files.txt
   skip: true  # [win or py3k]
 
 requirements:
