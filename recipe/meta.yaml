@@ -1,13 +1,12 @@
 {% set name = "aipy" %}
-{% set version = "2.1.6" %}
-{% set sha256 = "cf3c8a5e95b0f3dc9d67917e0be76ff6a4f3ca305559b51cc3257f14657a8e28" %}
+{% set version = "2.1.8" %}
+{% set sha256 = "466619a73885fb2a18e8681f2c8a66848ed9d25fc0ab53e889eb72c5abfc2c94" %}
 
 package:
   name: {{ name }}
   version: "{{ version }}"
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
