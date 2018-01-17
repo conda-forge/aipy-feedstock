@@ -20,7 +20,7 @@ requirements:
     - toolchain
     - astropy >=2.0
     - ephem
-    - numpy >=1.11
+    - numpy 1.11.*
     - python <3
     - setuptools
 
