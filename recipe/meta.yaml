@@ -1,6 +1,6 @@
 {% set name = "aipy" %}
-{% set version = "2.1.9" %}
-{% set sha256 = "fbc20526dac47ec7be8ae5d47ef0c40fcc7349d72ad8b0a48bd21d2c7858fe25" %}
+{% set version = "2.1.11" %}
+{% set sha256 = "f2ff8e0ea6210160fbb962794076db070c99cb7dd0bb985dbaad4b1e633d5c08" %}
 
 package:
   name: {{ name }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=files.txt
   skip: true  # [win or py3k]
 
@@ -33,6 +33,13 @@ requirements:
 test:
   imports:
     - aipy
+    - aipy._alm
+    - aipy._cephes
+    - aipy._deconv
+    - aipy._dsp
+    - aipy._healpix
+    - aipy._miriad
+    - aipy.utils
   commands:
     - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
     - conda inspect objects -p $PRFIX $PKG_NAME  # [osx]
