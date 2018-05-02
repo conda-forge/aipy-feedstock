@@ -21,14 +21,14 @@ requirements:
     - astropy >=2.0
     - ephem
     - numpy 1.11.*
-    - python <3
+    - python
     - setuptools
 
   run:
     - astropy >=2.0
     - ephem
     - numpy >=1.11
-    - python <3
+    - python
 
 test:
   imports:
