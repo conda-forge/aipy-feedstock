@@ -1,6 +1,6 @@
 {% set name = "aipy" %}
-{% set version = "2.1.11" %}
-{% set sha256 = "f2ff8e0ea6210160fbb962794076db070c99cb7dd0bb985dbaad4b1e633d5c08" %}
+{% set version = "2.1.12" %}
+{% set sha256 = "2687f949174a8a7981cd6a29ed0d7597199657b2bfbeff1e913e70753851a200" %}
 
 package:
   name: {{ name }}
@@ -21,14 +21,14 @@ requirements:
     - astropy >=2.0
     - ephem
     - numpy 1.11.*
-    - python <3
+    - python
     - setuptools
 
   run:
     - astropy >=2.0
     - ephem
     - numpy >=1.11
-    - python <3
+    - python
 
 test:
   imports:
