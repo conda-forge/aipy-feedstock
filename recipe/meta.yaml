@@ -17,6 +17,10 @@ build:
 
 requirements:
   build:
+    - {{ pin_compatible('numpy') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
@@ -29,7 +33,6 @@ requirements:
   run:
     - astropy >=2.0
     - ephem
-    - {{ pin_compatible('numpy') }}
     - python
 
 test:
