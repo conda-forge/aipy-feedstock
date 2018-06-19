@@ -17,17 +17,19 @@ build:
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - astropy >=2.0
     - ephem
-    - numpy 1.11.*
+    - numpy
     - python
     - setuptools
 
   run:
     - astropy >=2.0
     - ephem
-    - numpy >=1.11
+    - {{ pin_compatible('numpy') }}
     - python
 
 test:
