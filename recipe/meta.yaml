@@ -1,6 +1,6 @@
 {% set name = "aipy" %}
-{% set version = "2.1.12" %}
-{% set sha256 = "2687f949174a8a7981cd6a29ed0d7597199657b2bfbeff1e913e70753851a200" %}
+{% set version = "3.0.0rc1" %}
+{% set sha256 = "16601f07d559c8e968cbbc35cc09fe11341f6054b7011e1c3e9611832ccc051f" %}
 
 package:
   name: {{ name }}
@@ -12,34 +12,32 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record=files.txt
-  skip: true  # [win or py3k]
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+
   host:
-    - astropy >=2.0
-    - ephem
-    - numpy
     - python
-    - setuptools
+    - pip
+    - numpy
 
   run:
     - astropy >=2.0
     - ephem
+    - healpy >=1.11
     - {{ pin_compatible('numpy') }}
+    - scipy >=0.19
     - python
 
 test:
   imports:
     - aipy
-    - aipy._alm
-    - aipy._cephes
     - aipy._deconv
     - aipy._dsp
-    - aipy._healpix
     - aipy._miriad
     - aipy.utils
   commands:
