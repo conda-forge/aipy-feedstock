@@ -1,6 +1,6 @@
 {% set name = "aipy" %}
-{% set version = "3.0.0rc1" %}
-{% set sha256 = "16601f07d559c8e968cbbc35cc09fe11341f6054b7011e1c3e9611832ccc051f" %}
+{% set version = "3.0.0rc2" %}
+{% set sha256 = "2b6a61d20a5d13621fe08297e998c3b9d5dd723f38031d50dbe482fe777767cf" %}
 
 package:
   name: {{ name }}
