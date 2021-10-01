@@ -41,8 +41,6 @@ test:
     - aipy._miriad
     - aipy.utils
   commands:
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PRFIX $PKG_NAME  # [osx]
 
 about:
   home: https://github.com/HERA-Team/aipy
