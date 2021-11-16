@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: true  # [win]
 
@@ -41,8 +41,6 @@ test:
     - aipy._miriad
     - aipy.utils
   commands:
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PRFIX $PKG_NAME  # [osx]
 
 about:
   home: https://github.com/HERA-Team/aipy
