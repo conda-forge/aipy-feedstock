@@ -1,6 +1,6 @@
 {% set name = "aipy" %}
-{% set version = "3.0.1" %}
-{% set sha256 = "bd0293b575c4b8745fe3bd0a3e527104761ea9f9aadf1e725e4c628de49f3102" %}
+{% set version = "3.0.5" %}
+{% set sha256 = "950da37add39be46a21e830f1edbdaabc109aa9f1ca2ac686c825a8e7a142c23" %}
 
 package:
   name: {{ name }}
@@ -11,8 +11,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 3
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [win]
 
 requirements:
@@ -47,7 +47,7 @@ about:
   license: GPL v2+
   license_family: GPL
   license_file: LICENSE
-  summary: 'Astronomical interferometry in Python'
+  summary: Astronomical interferometry in Python
 
 extra:
   recipe-maintainers:
