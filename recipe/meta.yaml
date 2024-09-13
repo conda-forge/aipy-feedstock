@@ -1,3 +1,6 @@
+# Note: upstream is unmaintained and effectively obsolete. It's not compatible
+# with Numpy 2. This feedstock should be on its way to being archived.
+
 {% set name = "aipy" %}
 {% set version = "3.0.6" %}
 {% set sha256 = "cd56c64500a29a0ee8da3a8341b2fec17f3a3ee77fa7f50d8a6854ad1a696c67" %}
@@ -14,12 +17,16 @@ build:
   number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [win]
+  skip: true  # [py >= 313]
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    # We need to specify the dep twice to apply both the conda-forge global
+    # constraint and our additional restriction.
     - numpy                                  # [build_platform != target_platform]
+    - numpy <2                               # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
@@ -27,7 +34,9 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
     - numpy
+    - numpy <2
 
   run:
     - astropy >=2.0
