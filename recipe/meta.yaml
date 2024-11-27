@@ -14,7 +14,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [win]
   skip: true  # [py >= 313]
@@ -39,7 +39,7 @@ requirements:
     - numpy <2
 
   run:
-    - astropy >=2.0
+    - astropy-base >=2.0
     - ephem
     - healpy >=1.11
     - {{ pin_compatible('numpy') }}
