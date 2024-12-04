@@ -10,14 +10,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  skip: true  # [win]
-  skip: true  # [py >= 313]
+  number: 2
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: true  # [win or py >= 313]
 
 requirements:
   build:
@@ -39,7 +38,7 @@ requirements:
     - numpy <2
 
   run:
-    - astropy >=2.0
+    - astropy-base >=2.0
     - ephem
     - healpy >=1.11
     - {{ pin_compatible('numpy') }}
