@@ -25,7 +25,6 @@ requirements:
     # We need to specify the dep twice to apply both the conda-forge global
     # constraint and our additional restriction.
     - numpy                                  # [build_platform != target_platform]
-    - numpy <2                               # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
@@ -35,7 +34,6 @@ requirements:
     - pip
     - setuptools
     - numpy
-    - numpy <2
 
   run:
     - astropy-base >=2.0
